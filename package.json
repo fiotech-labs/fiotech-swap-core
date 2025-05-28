@@ -1,0 +1,45 @@
+{
+  "name": "@bnw-labs/dex-core",
+  "description": "🎛 Core contracts for the BNWSwap protocol",
+  "version": "0.0.1",
+  "homepage": "https://bnwswap.fiotech.org",
+  "author": "BNW Labs",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bnw-labs/dex-core"
+  },
+  "keywords": [
+    "blockchain",
+    "BNWSwap",
+    "core"
+  ],
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "clean": "hardhat clean"
+  },
+  "packageManager": "pnpm@10.11.0",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.8",
+    "@nomicfoundation/hardhat-ethers": "^3.0.8",
+    "@nomicfoundation/hardhat-ignition": "^0.15.11",
+    "@nomicfoundation/hardhat-ignition-ethers": "^0.15.11",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.12",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.14",
+    "@typechain/ethers-v6": "^0.5.1",
+    "@typechain/hardhat": "^9.1.0",
+    "@types/chai": "^4.3.20",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.15.23",
+    "chai": "^4.5.0",
+    "ethers": "^6.14.3",
+    "hardhat": "^2.24.1",
+    "hardhat-gas-reporter": "^1.0.10",
+    "solidity-coverage": "^0.8.16",
+    "ts-node": "^10.9.2",
+    "typechain": "^8.3.2",
+    "typescript": "^5.8.3"
+  }
+}
