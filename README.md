@@ -1,11 +1,11 @@
-# Uniswap V2
+# BNWSwap
 
-[![Actions Status](https://github.com/Uniswap/uniswap-v2-core/workflows/CI/badge.svg)](https://github.com/Uniswap/uniswap-v2-core/actions)
-[![Version](https://img.shields.io/npm/v/@uniswap/v2-core)](https://www.npmjs.com/package/@uniswap/v2-core)
+[![Actions Status](https://github.com/bnw-labs/dex-core/workflows/CI/badge.svg)](https://github.com/bnw-labs/dex-core/actions)
+[![Version](https://img.shields.io/npm/v/@bnw-labs/dex-core)](https://www.npmjs.com/package/@bnw-labs/dex-core)
 
-In-depth documentation on Uniswap V2 is available at [uniswap.org](https://uniswap.org/docs).
+In-depth documentation on BNWSwap is available at [bnwswap.fiotech.org](https://bnwswap.fiotech.org/docs).
 
-The built contract artifacts can be browsed via [unpkg.com](https://unpkg.com/browse/@uniswap/v2-core@latest/).
+The built contract artifacts can be browsed via [unpkg.com](https://unpkg.com/browse/@bnw-labs/dex-core@latest/).
 
 # Local Development
 

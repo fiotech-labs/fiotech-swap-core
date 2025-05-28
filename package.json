@@ -1,18 +1,16 @@
 {
-  "name": "@uniswap/v2-core",
-  "description": "🎛 Core contracts for the UniswapV2 protocol",
+  "name": "@bnw-labs/dex-core",
+  "description": "🎛 Core contracts for the BNWSwap protocol",
   "version": "1.0.1",
-  "homepage": "https://uniswap.org",
+  "homepage": "https://bnwswap.fiotech.org",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Uniswap/uniswap-v2-core"
+    "url": "https://github.com/bnw-labs/dex-core"
   },
   "keywords": [
-    "uniswap",
-    "ethereum",
-    "v2",
-    "core",
-    "uniswap-v2"
+    "blockchain",
+    "BNWSwap",
+    "core"
   ],
   "files": [
     "contracts",
