@@ -7,7 +7,7 @@ import "./libraries/SafeMath.sol";
 contract BnwSwapERC20 is IBnwSwapERC20 {
     using SafeMath for uint;
 
-    string public constant name = 'Bnw Swap';
+    string public constant name = 'BNW Swap';
     string public constant symbol = 'BNW-SWAP';
     uint8 public constant decimals = 18;
     uint  public totalSupply;
