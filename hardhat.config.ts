@@ -5,17 +5,20 @@ import * as dotenv from "dotenv";
 
 dotenv.config();
 
-const { BNW_RPC_URL, PRIVATE_KEY } = process.env;
+const { BNW_RPC_URL, BSC_RPC_URL, PRIVATE_KEY } = process.env;
 
 const config: HardhatUserConfig = {
   solidity: "0.8.28",
   networks: {
-    mainnet: {
+    bnw: {
       url: BNW_RPC_URL || "",
       chainId: 714,
       accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
-      initialBaseFeePerGas: 0,
-      gasPrice: 10_000_000_000,
+    },
+    bscTestnet: {
+      url: BSC_RPC_URL || "",
+      chainId: 97,
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
     },
   },
 };
