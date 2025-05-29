@@ -14,7 +14,7 @@ const config: HardhatUserConfig = {
       allowUnlimitedContractSize: false,
     },
     bnw: {
-      url: BNW_TESTNET_RPC_URL || "",
+      url: BNW_RPC_URL || "",
       chainId: 999,
       accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
       gasPrice: 5_000_000_000,
