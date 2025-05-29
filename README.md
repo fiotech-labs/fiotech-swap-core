@@ -1,24 +1,13 @@
-# BNWSwap
+# Sample Hardhat Project
 
-[![Actions Status](https://github.com/bnw-labs/dex-core/workflows/CI/badge.svg)](https://github.com/bnw-labs/dex-core/actions)
-[![Version](https://img.shields.io/npm/v/@bnw-labs/dex-core)](https://www.npmjs.com/package/@bnw-labs/dex-core)
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
 
-In-depth documentation on BNWSwap is available at [bnwswap.fiotech.org](https://bnwswap.fiotech.org/docs).
+Try running some of the following tasks:
 
-The built contract artifacts can be browsed via [unpkg.com](https://unpkg.com/browse/@bnw-labs/dex-core@latest/).
-
-# Local Development
-
-The following assumes the use of `node@>=10`.
-
-## Install Dependencies
-
-`yarn`
-
-## Compile Contracts
-
-`yarn compile`
-
-## Run Tests
-
-`yarn test`
+```shell
+npx hardhat help
+npx hardhat test
+REPORT_GAS=true npx hardhat test
+npx hardhat node
+npx hardhat ignition deploy ./ignition/modules/Lock.ts
+```

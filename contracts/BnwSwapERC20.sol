@@ -1,15 +1,17 @@
-pragma solidity =0.5.16;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.28;
 
-import './interfaces/IUniswapV2ERC20.sol';
-import './libraries/SafeMath.sol';
+import "./interfaces/IBnwSwapERC20.sol";
+import "./libraries/SafeMath.sol";
 
-contract UniswapV2ERC20 is IUniswapV2ERC20 {
+contract BnwSwapERC20 is IBnwSwapERC20 {
     using SafeMath for uint;
 
-    string public constant name = 'Uniswap V2';
-    string public constant symbol = 'UNI-V2';
+    string public constant name = 'BNW Swap';
+    string public constant symbol = 'BNW-SWAP';
     uint8 public constant decimals = 18;
     uint  public totalSupply;
+
     mapping(address => uint) public balanceOf;
     mapping(address => mapping(address => uint)) public allowance;
 
@@ -18,13 +20,10 @@ contract UniswapV2ERC20 is IUniswapV2ERC20 {
     bytes32 public constant PERMIT_TYPEHASH = 0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9;
     mapping(address => uint) public nonces;
 
-    event Approval(address indexed owner, address indexed spender, uint value);
-    event Transfer(address indexed from, address indexed to, uint value);
-
-    constructor() public {
+    constructor() {
         uint chainId;
         assembly {
-            chainId := chainid
+            chainId := chainid()
         }
         DOMAIN_SEPARATOR = keccak256(
             abi.encode(
@@ -71,7 +70,7 @@ contract UniswapV2ERC20 is IUniswapV2ERC20 {
     }
 
     function transferFrom(address from, address to, uint value) external returns (bool) {
-        if (allowance[from][msg.sender] != uint(-1)) {
+        if (allowance[from][msg.sender] != type(uint).max) {
             allowance[from][msg.sender] = allowance[from][msg.sender].sub(value);
         }
         _transfer(from, to, value);
@@ -79,7 +78,7 @@ contract UniswapV2ERC20 is IUniswapV2ERC20 {
     }
 
     function permit(address owner, address spender, uint value, uint deadline, uint8 v, bytes32 r, bytes32 s) external {
-        require(deadline >= block.timestamp, 'UniswapV2: EXPIRED');
+        require(deadline >= block.timestamp, 'BnwSwap: EXPIRED');
         bytes32 digest = keccak256(
             abi.encodePacked(
                 '\x19\x01',
@@ -88,7 +87,7 @@ contract UniswapV2ERC20 is IUniswapV2ERC20 {
             )
         );
         address recoveredAddress = ecrecover(digest, v, r, s);
-        require(recoveredAddress != address(0) && recoveredAddress == owner, 'UniswapV2: INVALID_SIGNATURE');
+        require(recoveredAddress != address(0) && recoveredAddress == owner, 'BnwSwap: INVALID_SIGNATURE');
         _approve(owner, spender, value);
     }
 }
