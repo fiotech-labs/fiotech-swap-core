@@ -15,9 +15,9 @@
     "core"
   ],
   "scripts": {
+    "precompile": "hardhat clean",
     "compile": "hardhat compile",
-    "test": "hardhat test",
-    "clean": "hardhat clean"
+    "test": "hardhat test"
   },
   "packageManager": "pnpm@10.11.0",
   "devDependencies": {
