@@ -1,13 +1,13 @@
 {
-  "name": "@bnw-labs/dex-core",
-  "description": "🎛 Core contracts for the BNWSwap protocol",
+  "name": "@fiotech-labs/bnw-swap-core",
+  "description": "🎛 Core contracts for the BNW Swap protocol",
   "version": "0.0.1",
   "homepage": "https://bnwswap.fiotech.org",
-  "author": "BNW Labs",
+  "author": "Fiotech Labs <labs@fiotech.org>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bnw-labs/dex-core"
+    "url": "https://github.com/fiotech-labs/bnw-swap-core"
   },
   "keywords": [
     "blockchain",
