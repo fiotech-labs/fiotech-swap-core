@@ -1,4 +1,4 @@
-describe("BnwSwapERC20", () => {
+describe("FiotechSwapERC20", () => {
   it("name, symbol, decimals, totalSupply, balanceOf, DOMAIN_SEPARATOR, PERMIT_TYPEHASH", async () => {});
 
   it("approve", async () => {});

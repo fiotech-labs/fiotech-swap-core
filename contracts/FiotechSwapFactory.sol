@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.28;
 
-import "./interfaces/IBnwSwapFactory.sol";
-import "./BnwSwapPair.sol";
+import "./interfaces/IFiotechSwapFactory.sol";
+import "./FiotechSwapPair.sol";
 
-contract BnwSwapFactory is IBnwSwapFactory {
+contract FiotechSwapFactory is IFiotechSwapFactory {
     address public feeTo;
     address public feeToSetter;
 
@@ -20,16 +20,16 @@ contract BnwSwapFactory is IBnwSwapFactory {
     }
 
     function createPair(address tokenA, address tokenB) external returns (address pair) {
-        require(tokenA != tokenB, 'BnwSwap: IDENTICAL_ADDRESSES');
+        require(tokenA != tokenB, 'FiotechSwap: IDENTICAL_ADDRESSES');
         (address token0, address token1) = tokenA < tokenB ? (tokenA, tokenB) : (tokenB, tokenA);
-        require(token0 != address(0), 'BnwSwap: ZERO_ADDRESS');
-        require(getPair[token0][token1] == address(0), 'BnwSwap: PAIR_EXISTS'); // single check is sufficient
-        bytes memory bytecode = type(BnwSwapPair).creationCode;
+        require(token0 != address(0), 'FiotechSwap: ZERO_ADDRESS');
+        require(getPair[token0][token1] == address(0), 'FiotechSwap: PAIR_EXISTS'); // single check is sufficient
+        bytes memory bytecode = type(FiotechSwapPair).creationCode;
         bytes32 salt = keccak256(abi.encodePacked(token0, token1));
         assembly {
             pair := create2(0, add(bytecode, 32), mload(bytecode), salt)
         }
-        IBnwSwapPair(pair).initialize(token0, token1);
+        IFiotechSwapPair(pair).initialize(token0, token1);
         getPair[token0][token1] = pair;
         getPair[token1][token0] = pair; // populate mapping in the reverse direction
         allPairs.push(pair);
@@ -37,12 +37,12 @@ contract BnwSwapFactory is IBnwSwapFactory {
     }
 
     function setFeeTo(address _feeTo) external {
-        require(msg.sender == feeToSetter, 'BnwSwap: FORBIDDEN');
+        require(msg.sender == feeToSetter, 'FiotechSwap: FORBIDDEN');
         feeTo = _feeTo;
     }
 
     function setFeeToSetter(address _feeToSetter) external {
-        require(msg.sender == feeToSetter, 'BnwSwap: FORBIDDEN');
+        require(msg.sender == feeToSetter, 'FiotechSwap: FORBIDDEN');
         feeToSetter = _feeToSetter;
     }
 }

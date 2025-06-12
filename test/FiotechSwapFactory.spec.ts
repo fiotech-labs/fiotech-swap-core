@@ -1,4 +1,4 @@
-describe("BnwSwapFactory", () => {
+describe("FiotechSwapFactory", () => {
   it("feeTo, feeToSetter, allPairsLength", async () => {});
 
   async function createPair(tokens: [string, string]) {}

@@ -1,17 +1,17 @@
 {
-  "name": "@fiotech-labs/bnw-swap-core",
-  "description": "🎛 Core contracts for the BNW Swap protocol",
+  "name": "@fiotech-labs/fiotech-swap-core",
+  "description": "🎛 Core contracts for the Fiotech Swap protocol",
   "version": "0.0.1",
-  "homepage": "https://bnwswap.fiotech.org",
+  "homepage": "https://swap.fiotech.org",
   "author": "Fiotech Labs <labs@fiotech.org>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fiotech-labs/bnw-swap-core"
+    "url": "https://github.com/fiotech-labs/fiotech-swap-core"
   },
   "keywords": [
     "blockchain",
-    "BNWSwap",
+    "FiotechSwap",
     "core"
   ],
   "scripts": {

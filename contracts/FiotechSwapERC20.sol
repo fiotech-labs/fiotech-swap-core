@@ -1,14 +1,14 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.28;
 
-import "./interfaces/IBnwSwapERC20.sol";
+import "./interfaces/IFiotechSwapERC20.sol";
 import "./libraries/SafeMath.sol";
 
-contract BnwSwapERC20 is IBnwSwapERC20 {
+contract FiotechSwapERC20 is IFiotechSwapERC20 {
     using SafeMath for uint;
 
-    string public constant name = 'BNW Swap';
-    string public constant symbol = 'BNW-SWAP';
+    string public constant name = 'Fiotech Swap';
+    string public constant symbol = 'FIO-SWAP';
     uint8 public constant decimals = 18;
     uint  public totalSupply;
 
@@ -78,7 +78,7 @@ contract BnwSwapERC20 is IBnwSwapERC20 {
     }
 
     function permit(address owner, address spender, uint value, uint deadline, uint8 v, bytes32 r, bytes32 s) external {
-        require(deadline >= block.timestamp, 'BnwSwap: EXPIRED');
+        require(deadline >= block.timestamp, 'FiotechSwap: EXPIRED');
         bytes32 digest = keccak256(
             abi.encodePacked(
                 '\x19\x01',
@@ -87,7 +87,7 @@ contract BnwSwapERC20 is IBnwSwapERC20 {
             )
         );
         address recoveredAddress = ecrecover(digest, v, r, s);
-        require(recoveredAddress != address(0) && recoveredAddress == owner, 'BnwSwap: INVALID_SIGNATURE');
+        require(recoveredAddress != address(0) && recoveredAddress == owner, 'FiotechSwap: INVALID_SIGNATURE');
         _approve(owner, spender, value);
     }
 }

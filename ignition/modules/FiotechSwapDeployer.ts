@@ -1,7 +1,7 @@
 import { buildModule } from "@nomicfoundation/hardhat-ignition/modules";
-import BnwSwapFactoryModule from "./BnwSwapFactoryModule";
+import FiotechSwapFactoryModule from "./FiotechSwapFactoryModule";
 
-export default buildModule("BnwSwapDeployer", (m) => {
+export default buildModule("FiotechSwapDeployer", (m) => {
   const tokenA = m.contract("ERC20", [1_000_000n * 10n ** 18n], {
     id: "TokenA",
   });
@@ -10,7 +10,7 @@ export default buildModule("BnwSwapDeployer", (m) => {
   });
 
   // Deploy Factory
-  const { factory } = m.useModule(BnwSwapFactoryModule);
+  const { factory } = m.useModule(FiotechSwapFactoryModule);
 
   // Create Pair
   const createPairTx = m.call(factory, "createPair", [tokenA, tokenB]);
@@ -18,7 +18,7 @@ export default buildModule("BnwSwapDeployer", (m) => {
 
   // Get Pair Address
   // Note: The PairCreated event is emitted by the factory when a new pair is created.
-  const pair = m.contractAt("BnwSwapPair", pairAddress);
+  const pair = m.contractAt("FiotechSwapPair", pairAddress);
 
   return { factory, tokenA, tokenB, pair };
 });

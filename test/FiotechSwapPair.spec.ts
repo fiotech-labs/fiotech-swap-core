@@ -1,4 +1,4 @@
-describe("BnwSwapPair", () => {
+describe("FiotechSwapPair", () => {
   it("mint", async () => {});
 
   it("swap:token0", async () => {});

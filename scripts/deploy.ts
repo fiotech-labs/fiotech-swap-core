@@ -1,9 +1,9 @@
 import hre from "hardhat";
-import BnwSwapDeployer from "../ignition/modules/BnwSwapDeployer";
+import FiotechSwapDeployer from "../ignition/modules/FiotechSwapDeployer";
 
 async function main() {
   const { factory, tokenA, tokenB, pair } = await hre.ignition.deploy(
-    BnwSwapDeployer
+    FiotechSwapDeployer
   );
 
   console.log({
